@@ -38,7 +38,7 @@ async function hashNIN(nin) {
 }
 
 function displayResult(item, nin) {
-  resultText.textContent = `نتيجة البحث عن NIN: ${nin}`;
+  resultText.textContent = `نتيجة البحث عن: ${nin}`;
   resultDetails.innerHTML = `
     <dt>الإسم الكامل</dt><dd>${(item.lastname + ' ' + item.firstname) || '-'}</dd>
     <dt>القسم</dt><dd>${item.assigned_class || '-'}</dd>
@@ -49,7 +49,7 @@ function displayResult(item, nin) {
 }
 
 function displayNotFound(nin) {
-  notFoundText.textContent = `لايوجد اي طالب يحمل رقم NIN "${nin}". تأكد من الرقم المدخل او ابحث عن اسمك في القوائم الإسمية.`;
+  notFoundText.textContent = `لايوجد اي طالب يحمل رقم "${nin}". تأكد من الرقم المدخل او ابحث عن اسمك في القوائم الإسمية.`;
   show(notFound);
   hide(result);
 }
