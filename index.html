@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Concourse Class Lookup</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🔍 Lookup Your Assigned Class</h1>
+    <p class="lead">
+      Enter your <strong>NIN (National Identification Number)</strong> to check which class you’ve been assigned to.
+      Your ID is never sent over the Internet — it’s verified locally and securely.
+    </p>
+
+    <form id="lookupForm" autocomplete="off">
+      <label for="ninInput">Enter your NIN</label>
+      <input id="ninInput" name="nin" type="text" inputmode="numeric" pattern="[0-9]*"
+             placeholder="Example: 0123456789" required />
+      <div class="row">
+        <button type="submit">Search</button>
+        <button type="button" id="clearBtn" class="secondary">Clear</button>
+      </div>
+    </form>
+
+    <section id="result" class="card hidden" aria-live="polite">
+      <h2>✅ Result</h2>
+      <p id="resultText"></p>
+      <dl id="resultDetails"></dl>
+      <div class="row">
+        <button id="copyBtn">Copy Result</button>
+        <button id="printBtn" class="secondary">Print</button>
+      </div>
+    </section>
+
+    <section id="notFound" class="card hidden" aria-live="polite">
+      <h2>⚠️ Not Found</h2>
+      <p id="notFoundText"></p>
+    </section>
+
+    <footer>
+      <small>© 2025 EPSP Berriane — Secure static lookup powered by hashed NINs</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
