@@ -84,3 +84,34 @@ clearBtn.addEventListener('click', () => {
   hide(result);
   hide(notFound);
 });
+
+
+
+const previewBtn = document.getElementById('previewBtn');
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('examImage');
+const closeModal = document.getElementById('closeModal');
+
+previewBtn.addEventListener('click', () => {
+  modal.style.display = 'block';
+});
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// إغلاق عند الضغط خارج الصورة
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
+// تكبير/تصغير الصورة بالنقر عليها
+modalImg.addEventListener('click', () => {
+  modalImg.classList.toggle('zoomed');
+});
+
+
+
+
