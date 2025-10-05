@@ -31,10 +31,10 @@ const lookupForm = document.getElementById('lookupFasync function searchNIN() {
     if (record) {
       resultDiv.innerHTML = `
         ✅ <strong>${record.nom} ${record.prenom}</strong><br>
-        📍 <b>المركز:</b> ${record["مركز الامتحان"]}<br>
-        🏫 <b>القسم:</b> ${record["القسم"]}<br>
-        🏢 <b>الجناح:</b> ${record["الجناح"]}
-      `;
+        📍 <b>المركز:</b> ${record.centre}<br>
+        🏫 <b>القسم:</b> ${record.classe}<br>
+        🏢 <b>الجناح:</b> ${record.bloc}
+    `;
     } else {
       resultDiv.innerHTML = "❌ لم يتم العثور على أي نتيجة بهذا الرقم.";
     }
