@@ -1,4 +1,4 @@
-:root {
+من:root {
   --bg: #f7f9fb;
   --card: #fff;
   --text: #222;
@@ -104,4 +104,61 @@ footer {
   max-width: 900px;        /* limit max size so it doesn’t pixelate */
   height: auto;            /* keep aspect ratio */
 }
+
+/* نافذة الصورة المنبثقة */
+.modal {
+  display: none; /* مخفية افتراضياً */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.85);
+}
+
+/* الصورة داخل النافذة */
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+/* عند التكبير */
+.modal-content.zoomed {
+  transform: scale(1.8);
+  cursor: zoom-out;
+}
+
+/* زر الإغلاق */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.close:hover {
+  color: #ff4444;
+}
+
+/* النص أسفل الصورة */
+#caption {
+  text-align: center;
+  color: #ccc;
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+
 
