@@ -96,21 +96,20 @@ footer {
   font-size: 0.9rem;
 }
 
+
 .logo {
   display: block;
-  margin: 0 auto 30px auto;   /* center + extra spacing below */
-  max-width: 220px;           /* larger max size */
-  width: 50%;                 /* takes half the container width */
+  margin: 0 auto 35px auto;   /* center + spacing below */
+  max-width: 360px;           /* big logo for desktop */
+  width: 70%;                 /* scales with screen size */
   height: auto;               /* keep proportions */
 }
 
 @media (max-width: 600px) {
   .logo {
-    max-width: 160px;         /* still visible on phones */
-    width: 70%;
+    max-width: 240px;         /* still large on mobile */
+    width: 80%;
   }
 }
-
-
 
 
