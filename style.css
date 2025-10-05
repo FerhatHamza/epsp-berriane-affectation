@@ -95,19 +95,22 @@ footer {
   text-align: center;
   font-size: 0.9rem;
 }
+
 .logo {
   display: block;
-  margin: 0 auto 20px auto;   /* center + spacing below */
-  max-width: 120px;           /* limit size */
-  width: 30%;                 /* responsive scaling */
-  height: auto;               /* keep aspect ratio */
+  margin: 0 auto 30px auto;   /* center + extra spacing below */
+  max-width: 220px;           /* larger max size */
+  width: 50%;                 /* takes half the container width */
+  height: auto;               /* keep proportions */
 }
 
 @media (max-width: 600px) {
   .logo {
-    max-width: 80px;          /* smaller on phones */
-    width: 40%;
+    max-width: 160px;         /* still visible on phones */
+    width: 70%;
   }
 }
+
+
 
 
