@@ -42,6 +42,7 @@
       <div class="row">
         <button id="copyBtn">نسخ النتيجة</button>
         <button id="printBtn" class="secondary">طباعة</button>
+        <button type="button" id="previewBtn" class="secondary">📍 معاينة مكان الإختبار</button>
       </div>
     </section>
 
@@ -53,6 +54,13 @@
     <footer>
       <small>© 2025 المؤسسة العمومية للصحة الجوارية بريان — مصلحة الإعلام الآلي</small>
     </footer>
+    
+      <!-- نافذة الصورة المنبثقة -->  
+      <div id="imageModal" class="modal hidden">
+      <span id="closeModal" class="close">&times;</span>
+      <img class="modal-content" id="examImage" src="data/exam_location.jpg" alt="مكان الإختبار">
+      <div id="caption">مكان إجراء الاختبار</div>
+    </div>
   </main>
 
   <script src="script.js"></script>
