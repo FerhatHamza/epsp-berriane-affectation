@@ -37,9 +37,9 @@ async function hashNIN(nin) {
 function displayResult(item, nin) {
   resultText.textContent = `نتيجة البحث عن NIN: ${nin}`;
   resultDetails.innerHTML = `
-    <dt>الإسم الكامل</dt><dd>${item.name || '-'}</dd>
+    <dt>الإسم الكامل</dt><dd>${(item.lastname + ' ' + item.firstname) || '-'}</dd>
     <dt>القسم</dt><dd>${item.assigned_class || '-'}</dd>
-    <dt>الجناح</dt><dd>${item.notes || '-'}</dd>
+    <dt>الجناح</dt><dd>${item.wing || '-'}</dd>
   `;
   show(result);
   hide(notFound);
