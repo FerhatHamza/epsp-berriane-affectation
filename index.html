@@ -17,8 +17,18 @@
 
     <form id="lookupForm" autocomplete="off">
       <label for="ninInput">أدخل رقم التعريف الوطني</label>
-      <input id="ninInput" name="nin" type="text" inputmode="numeric" pattern="[0-9]*"
-             placeholder="مثال: 0123456789" required />
+      <input
+        id="ninInput"
+        name="nin"
+        type="text"
+        inputmode="numeric"
+        pattern="[0-9]{18}"
+        maxlength="18"
+        minlength="18"
+        placeholder="مثال: 000000000000000000"
+        required
+/>
+      
       <div class="row">
         <button type="submit">بحث</button>
         <button type="button" id="clearBtn" class="secondary">مسح</button>
