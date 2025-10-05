@@ -99,17 +99,15 @@ footer {
 
 .logo {
   display: block;
-  margin: 0 auto 35px auto;   /* center + spacing below */
-  max-width: 360px;           /* big logo for desktop */
-  width: 70%;                 /* scales with screen size */
-  height: auto;               /* keep proportions */
+  margin: 0 auto 40px auto;   /* centered with more space below */
+  max-width: 500px;           /* large size on big screens */
+  width: 85%;                 /* fill most of the container */
+  height: auto;               /* keep aspect ratio */
 }
 
 @media (max-width: 600px) {
   .logo {
-    max-width: 240px;         /* still large on mobile */
-    width: 80%;
+    max-width: 320px;         /* large but fits smaller screens */
+    width: 90%;
   }
 }
-
-
