@@ -35,18 +35,18 @@ async function hashNIN(nin) {
 }
 
 function displayResult(item, nin) {
-  resultText.textContent = `Result for NIN: ${nin}`;
+  resultText.textContent = `نتيجة البحث عن NIN: ${nin}`;
   resultDetails.innerHTML = `
-    <dt>Full Name</dt><dd>${item.name || '-'}</dd>
-    <dt>Assigned Class</dt><dd>${item.assigned_class || '-'}</dd>
-    <dt>Notes</dt><dd>${item.notes || '-'}</dd>
+    <dt>الإسم الكامل</dt><dd>${item.name || '-'}</dd>
+    <dt>القسم</dt><dd>${item.assigned_class || '-'}</dd>
+    <dt>الجناح</dt><dd>${item.notes || '-'}</dd>
   `;
   show(result);
   hide(notFound);
 }
 
 function displayNotFound(nin) {
-  notFoundText.textContent = `No record found for NIN "${nin}". Please check and try again.`;
+  notFoundText.textContent = `لايوجد اي طالب يحمل رقم NIN "${nin}". تأكد من الرقم المدخل او ابحث عن اسمك في القوائم الإسمية.`;
   show(notFound);
   hide(result);
 }
