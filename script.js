@@ -8,6 +8,9 @@ let assignments = null;
 // Elements
 const lookupForm = document.getElementById('lookupForm');
 const ninInput = document.getElementById('ninInput');
+ninInput.addEventListener('input', () => {
+  ninInput.value = ninInput.value.replace(/\D/g, '').slice(0, 18);
+});
 const result = document.getElementById('result');
 const resultText = document.getElementById('resultText');
 const resultDetails = document.getElementById('resultDetails');
