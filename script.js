@@ -6,7 +6,44 @@ const SALT = 'EPSP-Berriane-2025'; // must match Python SALT
 let assignments = null;
 
 // Elements
-const lookupForm = document.getElementById('lookupForm');
+const lookupForm = document.getElementById('lookupFasync function searchNIN() {
+  const nin = document.getElementById("ninInput").value.trim();
+  const resultDiv = document.getElementById("result");
+
+  if (!nin) {
+    resultDiv.innerHTML = "⚠️ الرجاء إدخال رقم التعريف الوطني.";
+    return;
+  }
+
+  resultDiv.innerHTML = "⏳ جاري البحث ...";
+
+  try {
+    const response = await fetch("data/assignments.json");
+    const data = await response.json();
+
+    const encoder = new TextEncoder();
+    const hashBuffer = await crypto.subtle.digest("SHA-256", encoder.encode(nin));
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+
+    const record = data.find(item => item.nin_hash === hashHex);
+
+    if (record) {
+      resultDiv.innerHTML = `
+        ✅ <strong>${record.nom} ${record.prenom}</strong><br>
+        📍 <b>المركز:</b> ${record["مركز الامتحان"]}<br>
+        🏫 <b>القسم:</b> ${record["القسم"]}<br>
+        🏢 <b>الجناح:</b> ${record["الجناح"]}
+      `;
+    } else {
+      resultDiv.innerHTML = "❌ لم يتم العثور على أي نتيجة بهذا الرقم.";
+    }
+  } catch (err) {
+    console.error(err);
+    resultDiv.innerHTML = "حدث خطأ أثناء تحميل البيانات.";
+  }
+}
+orm');
 const ninInput = document.getElementById('ninInput');
 const result = document.getElementById('result');
 const resultText = document.getElementById('resultText');
