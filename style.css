@@ -1,97 +1,68 @@
-:root {
-  --bg: #f7f9fb;
-  --card: #fff;
-  --text: #222;
-  --muted: #666;
-  --accent: #0070f3;
-  --secondary: #6b7280;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-}
-
-* { box-sizing: border-box; }
 body {
+  font-family: "Tajawal", sans-serif;
+  background: #f9fafb;
   margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+  padding: 0;
+  direction: rtl;
+  text-align: center;
 }
 
 .container {
-  max-width: 720px;
-  margin: 48px auto;
-  padding: 16px;
+  max-width: 600px;
+  margin: 80px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  margin-bottom: 8px;
-  font-size: 1.8rem;
+  color: #0066cc;
+  margin-bottom: 10px;
 }
-.lead {
-  color: var(--muted);
+
+p {
+  color: #444;
   margin-bottom: 20px;
 }
 
-form {
-  background: var(--card);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
-  margin-bottom: 20px;
-}
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-input {
-  width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-}
-
-.row {
+.search-box {
   display: flex;
-  gap: 8px;
-  margin-top: 12px;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 70%;
+}
+
 button {
-  padding: 10px 14px;
-  border-radius: 6px;
-  border: none;
-  background: var(--accent);
+  background: #0066cc;
   color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
   cursor: pointer;
-  font-size: 1rem;
 }
-button.secondary {
-  background: var(--secondary);
-}
+
 button:hover {
-  opacity: 0.9;
+  background: #004d99;
 }
 
-.card {
-  background: var(--card);
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  margin-bottom: 12px;
-}
-.hidden { display: none; }
-
-#resultDetails dt {
-  font-weight: bold;
-  margin-top: 8px;
-}
-#resultDetails dd {
-  margin: 0 0 8px 0;
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
 }
 
 footer {
-  margin-top: 20px;
-  color: var(--muted);
-  text-align: center;
-  font-size: 0.9rem;
+  margin-top: 40px;
+  color: #666;
+  font-size: 14px;
 }
