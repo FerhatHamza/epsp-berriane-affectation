@@ -38,30 +38,28 @@ async function hashNIN(nin) {
 }
 
 function displayResult(item, nin) {
-  // تنظيف وتنسيق النصوص
-  const fullname = [item.lastname, item.firstname].filter(Boolean).join(' ') || 'غير متوفر';
-  const fathername = item.fathername || 'غير متوفر';
-  const birthdate = item.birthdate || 'غير متوفر';
-  const examCenter = item.center || 'متوسطة المجاهد أولاد الطاهر أحمد بن بابية -بريان';
-  const assignedClass = item.assigned_class || 'غير متوفر';
-  const wing = item.wing || 'غير متوفر';
-
-  // عنوان النتيجة
   resultText.innerHTML = `
-    🔎 نتيجة البحث عن رقم التعريف: <strong>${nin}</strong>
+    <strong>🔎 نتيجة البحث عن:</strong> <span dir="ltr">${nin}</span>
   `;
-
-  // تفاصيل النتيجة
   resultDetails.innerHTML = `
-    <dt>الإسم الكامل</dt><dd>${fullname}</dd>
-    <dt>اسم الأب</dt><dd>${fathername}</dd>
-    <dt>تاريخ الميلاد</dt><dd>${birthdate}</dd>
-    <dt>مركز الامتحان</dt><dd>${examCenter}</dd>
-    <dt>القسم</dt><dd>${assignedClass}</dd>
-    <dt>الجناح</dt><dd>${wing}</dd>
-  `;
+    <div class="info-block">
+      <dt>👤 الإسم الكامل</dt>
+      <dd>${(item.lastname + ' ' + item.firstname) || '-'}<br>
+      <small class="en">Full Name</small></dd>
+    </div>
 
-  // إظهار النتيجة وإخفاء رسالة عدم الوجود
+    <div class="info-block">
+      <dt>🏫 القسم</dt>
+      <dd>${item.assigned_class || '-'}<br>
+      <small class="en">Assigned Class</small></dd>
+    </div>
+
+    <div class="info-block">
+      <dt>🏢 الجناح</dt>
+      <dd>${item.wing || '-'}<br>
+      <small class="en">Wing</small></dd>
+    </div>
+  `;
   show(result);
   hide(notFound);
 }
