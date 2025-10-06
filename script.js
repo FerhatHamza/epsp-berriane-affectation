@@ -50,32 +50,26 @@ function displayResult(item, nin) {
   resultDetails.innerHTML = `
     <div class="info-line">
       <span>👤 <strong>الإسم الكامل:</strong> ${fullname}</span>
-      <small class="en">Full Name</small>
     </div>
 
     <div class="info-line">
       <span>👨‍👦 <strong>اسم الأب:</strong> ${fathername}</span>
-      <small class="en">Father's Name</small>
     </div>
 
     <div class="info-line">
       <span>🎂 <strong>تاريخ الميلاد:</strong> ${birthdate}</span>
-      <small class="en">Date of Birth</small>
     </div>
 
     <div class="info-line">
       <span>🏫 <strong>المركز:</strong> ${examCenter}</span>
-      <small class="en">Exam Center</small>
     </div>
 
     <div class="info-line highlight class">
       <span>📘 <strong>القسم:</strong> ${assignedClass}</span>
-      <small class="en">Assigned Class</small>
     </div>
 
     <div class="info-line highlight wing">
       <span>🏢 <strong>الجناح:</strong> ${wing}</span>
-      <small class="en">Wing</small>
     </div>
   `;
 
