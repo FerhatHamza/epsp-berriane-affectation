@@ -261,19 +261,19 @@ small.en {
 }
 
 .highlight.class {
-  background: linear-gradient(135deg, #0070f3, #009dff);
+  background: linear-gradient(135deg, #ef4444, #f87171);
   color: #fff;
   border: none;
 }
 
 .highlight.wing {
-  background: linear-gradient(135deg, #059669, #10b981);
+  background: linear-gradient(135deg, #10b981, #6ee7b7);
   color: #fff;
   border: none;
 }
 
 .highlight small.en {
-  color: rgba(255,255,255,0.85);
+  color: rgba(255,255,255,0.9);
 }
 
 small.en {
