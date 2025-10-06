@@ -42,7 +42,7 @@ function displayResult(item, nin) {
   const fullname = [item.lastname, item.firstname].filter(Boolean).join(' ') || 'غير متوفر';
   const fathername = item.fathername || 'غير متوفر';
   const birthdate = item.birthdate || 'غير متوفر';
-  const examCenter = item.center || 'غير متوفر';
+  const examCenter = item.center || 'متوسطة المجاهد أولاد الطاهر أحمد بن بابية -بريان';
   const assignedClass = item.assigned_class || 'غير متوفر';
   const wing = item.wing || 'غير متوفر';
 
