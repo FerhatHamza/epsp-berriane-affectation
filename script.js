@@ -38,15 +38,34 @@ async function hashNIN(nin) {
 }
 
 function displayResult(item, nin) {
-  resultText.textContent = `نتيجة البحث عن: ${nin}`;
-  resultDetails.innerHTML = `
-    <dt>الإسم الكامل</dt><dd>${(item.lastname + ' ' + item.firstname) || '-'}</dd>
-    <dt>القسم</dt><dd>${item.assigned_class || '-'}</dd>
-    <dt>الجناح</dt><dd>${item.wing || '-'}</dd>
+  // تنظيف وتنسيق النصوص
+  const fullname = [item.lastname, item.firstname].filter(Boolean).join(' ') || 'غير متوفر';
+  const fathername = item.fathername || 'غير متوفر';
+  const birthdate = item.birthdate || 'غير متوفر';
+  const examCenter = item.center || 'غير متوفر';
+  const assignedClass = item.assigned_class || 'غير متوفر';
+  const wing = item.wing || 'غير متوفر';
+
+  // عنوان النتيجة
+  resultText.innerHTML = `
+    🔎 نتيجة البحث عن رقم التعريف: <strong>${nin}</strong>
   `;
+
+  // تفاصيل النتيجة
+  resultDetails.innerHTML = `
+    <dt>الإسم الكامل</dt><dd>${fullname}</dd>
+    <dt>اسم الأب</dt><dd>${fathername}</dd>
+    <dt>تاريخ الميلاد</dt><dd>${birthdate}</dd>
+    <dt>مركز الامتحان</dt><dd>${examCenter}</dd>
+    <dt>القسم</dt><dd>${assignedClass}</dd>
+    <dt>الجناح</dt><dd>${wing}</dd>
+  `;
+
+  // إظهار النتيجة وإخفاء رسالة عدم الوجود
   show(result);
   hide(notFound);
 }
+
 
 function displayNotFound(nin) {
   notFoundText.textContent = `لايوجد اي طالب يحمل رقم "${nin}". تأكد من الرقم المدخل او ابحث عن اسمك في القوائم الإسمية.`;
