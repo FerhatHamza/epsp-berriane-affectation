@@ -1,4 +1,4 @@
-// script.js — secure hashed NIN lookup
+
 
 const DATA_PATH = 'data/assignments.json';
 const SALT = 'EPSP-Berriane-2025'; // must match Python SALT
